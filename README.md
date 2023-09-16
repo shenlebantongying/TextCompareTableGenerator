@@ -1,12 +1,10 @@
 # Textual Comparison table Generator (tcg)
 
-Personal mini utility to make comparison tables, written in Java.
+Mini utility to make comparison tables.
 
 This is suitable for users who write notes on pure text and want to compare things.
 
 It can convert a markdown like doc to a text table which can then be copied to anywhere.
-
-Since it use markdown, you can enjoy zero cost syntax highlighting.
 
 ```text
     # Input/Output
@@ -80,32 +78,9 @@ Local Declarations
 
 ## Usage
 
-1. Install newest Java.
-2. Grab `tcg.run` or `tcg.jar` from Github releases
-3. `./tcg.run <filename>.md` or  `java -jar tcg.jar <filename>.md`
-
-### Config
-
-There are no command line flags, YAML front matters do all the config.
-
-```yaml
----
-tabsize: 4
-ending: true/false
----
 ```
-
-## Build
-
-+ `make` -> single executable `tcg.run`,
-+ `make tcg.jar`
-+ `make test`
-
-
-## Misc
-
-+ Only tested on JDK 16.
-+ Not optimal Java, as I never code much java before.
+java tcg.java file.txt
+```
 
 ## License
 
