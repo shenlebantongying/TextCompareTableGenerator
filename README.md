@@ -1,15 +1,20 @@
 # Textual Comparison table Generator (tcg)
 
-Mini utility to make comparison tables.
+Mini utility to make comparison tables written in 3 languages. It can convert a markdown-like doc to a side-by-side plain text table.
 
-This is suitable for users who write notes on pure text and want to compare things.
-
-It can convert a markdown like doc to a text table which can then be copied to anywhere.
+```shell
+# java
+java ./tcg.java test.md
+# racket
+./tcg.rkt test.md
+# ocaml
+./tcg.ml test.md
+```
 
 Table like this
 ```text
 Input/Output
--SML---------------------------------------+-Ocaml------------------------------------
+-SML---------------------------------------+-OCaml------------------------------------
  fun copyFile(name1, name2) =              | let copy_file name1 name2 =
      let                                   |    let file1 = open_in name1 in
          val file1 = TextIO.openIn name1   |    let size = in_channel_length file1 in
@@ -22,7 +27,7 @@ Input/Output
 ======================================================================================
 
 Local Declarations
--SML---------------------------------------+-Ocaml------------------------------------
+-SML---------------------------------------+-OCaml------------------------------------
  fun pyt(x,y) =                            | let pyt x y =
     let                                    |    let xx = x *. x in
        val xx = x * x                      |    let yy = y *. y in
@@ -32,7 +37,7 @@ Local Declarations
 ======================================================================================
 ```
 
-Can be obtained from
+can be obtained from
 
 ```text
     # Input/Output
@@ -48,7 +53,7 @@ Can be obtained from
             TextIO.closeOut file2
     end
     ```
-    ```Ocaml
+    ```OCaml
     let copy_file name1 name2 =
        let file1 = open_in name1 in
        let size = in_channel_length file1 in
@@ -69,28 +74,12 @@ Can be obtained from
           Math.sqrt(xx + yy)
        end
     ```
-    ```Ocaml
+    ```OCaml
     let pyt x y =
        let xx = x *. x in
        let yy = y *. y in
        sqrt (xx +. yy)
     ```
-```
-
-
-## Usage
-
-This is implemented in 2 languages
-
-### Java
-
-```
-java ./tcg.java file.md
-```
-
-### Racket
-```
-./tcg.rkt file.md
 ```
 
 ## License
